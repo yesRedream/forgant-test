@@ -1,0 +1,208 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #141e27;
+	background-image: url("../img/bg.png");
+  	background-repeat: no-repeat;
+  	background-position: bottom;
+  	background-size: cover;
+  	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	color: #fff;
+}
+
+.red {
+	color: red !important;
+}
+
+.header {
+	border-radius: 10px;
+	background-color:  rgba(252, 252, 252, 0.02);
+	width: 985px;
+	height: 98px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 70px;
+	padding-left: 36px;
+	display: flex;
+	align-items: center;
+	border: 1px solid #253741;
+	box-sizing: border-box;
+
+	h1 {
+		font-weight: 500;
+		font-size: 32px;
+	}
+}
+
+.crypto-section {
+  	width: 100%;
+  	display: flex;
+	flex-wrap: wrap;
+  	justify-content: center;
+	
+	box-sizing: border-box;
+	max-width: 1920px;
+	height: 718px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+
+
+	
+
+	
+
+	
+	
+  	.crypto-wrap {
+  		background-color: #141e27;
+  		
+  		width: 308px;
+  		height: 354px;
+  		margin: 15px;
+  		padding: 20px;
+  		padding-left: 25px;
+  		padding-right: 25px;
+  		box-sizing: border-box;
+  		border-radius: 5px;
+
+		&.ethereum-wrap {
+	  		background-image: url(../img/ethereum-bg.png);
+	  	}
+
+	  	&.litecoin-wrap {
+	  		background-image: url(../img/litecoin-bg.png);
+	 	}
+
+	 	&.bitcoin-wrap {
+	  		background-image: url(../img/bitcoin-bg.png);
+	  	}
+
+  		.crypto-name {
+  			margin: 0;
+  			position: relative;
+  			z-index: 2;
+			font-size: 22px;
+			text-align: center;
+  		}
+
+  		.crypto-data-wrap {
+			display: flex;
+			flex-wrap: wrap;
+			padding-top: 142px;
+
+			form {
+				display: flex;
+				align-items: flex-start;
+				justify-content: flex-end;
+			}
+
+
+			.toggle-button {
+				display: none;
+			}
+
+			.toggle-button + label:before {
+				content: "";
+				border-radius: 50%;
+				background-image: url(../img/toggle-icon.png);
+				display: block;
+				left: 0px;
+				top: -3px;
+				height: 22px;
+				width: 22px;
+				background-position: center;
+				position: relative;
+				transition: all 0.3s;
+			}
+
+			.toggle-button + label {
+				background-color:  #3eb5f1;
+				width: 41px;
+				height: 15px;
+				border-radius: 1rem;
+				cursor: pointer;
+				display: block;
+				transition: all 0.3s;
+			}
+
+			.toggle-button:checked + label:before {
+				left: 20px;
+			}
+
+			.toggle-button:checked + label {
+				background-color:  #c4c4c4;
+			}
+	  			
+  			.data-name {
+  				width: 50%;
+  				opacity: 0.5;
+  				margin-bottom: 7px;
+  				font-size: 14px;
+
+  				&.price {
+  					font-size: 20px;
+  					opacity: 1;
+  					margin-bottom: 13px;
+  				}
+
+  				&.percent-toggle {
+  					font-size: 14px;
+  					opacity: 1;
+  					margin-bottom: 11px;
+  				}
+  			}
+
+  			.data {
+  				width: 50%;
+  				margin: 0;
+  				text-align: right;
+  				color: #70c446;
+  				font-size: 16px;
+
+  				&.price {
+  					color: #fff;
+  					font-size: 21px;
+  				}
+
+  				&.data-hour-ethereum,
+  				&.data-day-ethereum,
+  				&.data-week-ethereum,
+  				&.data-month-ethereum,
+  				&.data-hour-ltc,
+  				&.data-day-ltc,
+  				&.data-week-ltc,
+  				&.data-month-ltc,
+  				&.data-hour-btc,
+  				&.data-day-btc,
+  				&.data-week-btc,
+  				&.data-month-btc {
+					display: block;
+					&.active {
+						display: none;
+					}
+  				}
+
+
+  				&.data-hour-ethereum-usd,
+  				&.data-day-ethereum-usd,
+  				&.data-week-ethereum-usd,
+  				&.data-month-ethereum-usd,
+  				&.data-hour-ltc-usd,
+  				&.data-day-ltc-usd,
+  				&.data-week-ltc-usd,
+  				&.data-month-ltc-usd,
+  				&.data-hour-btc-usd,
+  				&.data-day-btc-usd,
+  				&.data-week-btc-usd,
+  				&.data-month-btc-usd {
+					display: none;
+					&.active {
+						display: block;
+					}
+  				}
+  			}
+  		}
+  	}
+}

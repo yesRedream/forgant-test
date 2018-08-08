@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #141e27;
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #fff; }
+
+.red {
+  color: red !important; }
+
+.header {
+  border-radius: 10px;
+  background-color: rgba(252, 252, 252, 0.02);
+  width: 985px;
+  height: 98px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  padding-left: 36px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #253741;
+  box-sizing: border-box; }
+  .header h1 {
+    font-weight: 500;
+    font-size: 32px; }
+
+.crypto-section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 1920px;
+  height: 718px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px; }
+  .crypto-section .crypto-wrap {
+    background-color: #141e27;
+    width: 308px;
+    height: 354px;
+    margin: 15px;
+    padding: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    border-radius: 5px; }
+    .crypto-section .crypto-wrap.ethereum-wrap {
+      background-image: url(../img/ethereum-bg.png); }
+    .crypto-section .crypto-wrap.litecoin-wrap {
+      background-image: url(../img/litecoin-bg.png); }
+    .crypto-section .crypto-wrap.bitcoin-wrap {
+      background-image: url(../img/bitcoin-bg.png); }
+    .crypto-section .crypto-wrap .crypto-name {
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      font-size: 22px;
+      text-align: center; }
+    .crypto-section .crypto-wrap .crypto-data-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 142px; }
+      .crypto-section .crypto-wrap .crypto-data-wrap form {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end; }
+      .crypto-section .crypto-wrap .crypto-data-wrap .toggle-button {
+        display: none; }
+      .crypto-section .crypto-wrap .crypto-data-wrap .toggle-button + label:before {
+        content: "";
+        border-radius: 50%;
+        background-image: url(../img/toggle-icon.png);
+        display: block;
+        left: 0px;
+        top: -3px;
+        height: 22px;
+        width: 22px;
+        background-position: center;
+        position: relative;
+        transition: all 0.3s; }
+      .crypto-section .crypto-wrap .crypto-data-wrap .toggle-button + label {
+        background-color: #3eb5f1;
+        width: 41px;
+        height: 15px;
+        border-radius: 1rem;
+        cursor: pointer;
+        display: block;
+        transition: all 0.3s; }
+      .crypto-section .crypto-wrap .crypto-data-wrap .toggle-button:checked + label:before {
+        left: 20px; }
+      .crypto-section .crypto-wrap .crypto-data-wrap .toggle-button:checked + label {
+        background-color: #c4c4c4; }
+      .crypto-section .crypto-wrap .crypto-data-wrap .data-name {
+        width: 50%;
+        opacity: 0.5;
+        margin-bottom: 7px;
+        font-size: 14px; }
+        .crypto-section .crypto-wrap .crypto-data-wrap .data-name.price {
+          font-size: 20px;
+          opacity: 1;
+          margin-bottom: 13px; }
+        .crypto-section .crypto-wrap .crypto-data-wrap .data-name.percent-toggle {
+          font-size: 14px;
+          opacity: 1;
+          margin-bottom: 11px; }
+      .crypto-section .crypto-wrap .crypto-data-wrap .data {
+        width: 50%;
+        margin: 0;
+        text-align: right;
+        color: #70c446;
+        font-size: 16px; }
+        .crypto-section .crypto-wrap .crypto-data-wrap .data.price {
+          color: #fff;
+          font-size: 21px; }
+        .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ethereum, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ethereum, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ethereum, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ethereum, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ltc, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ltc, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ltc, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ltc, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-btc, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-btc, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-btc, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-btc {
+          display: block; }
+          .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ethereum.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ethereum.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ethereum.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ethereum.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ltc.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ltc.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ltc.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ltc.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-btc.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-btc.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-btc.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-btc.active {
+            display: none; }
+        .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ethereum-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ethereum-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ethereum-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ethereum-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ltc-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ltc-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ltc-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ltc-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-btc-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-btc-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-btc-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-btc-usd {
+          display: none; }
+          .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ethereum-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ethereum-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ethereum-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ethereum-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ltc-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ltc-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ltc-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ltc-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-btc-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-btc-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-btc-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-btc-usd.active {
+            display: block; }
