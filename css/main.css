@@ -1,243 +1,301 @@
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #141e27;
-  background-image: url("../img/bg.png");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: cover;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  color: #fff;
+	margin: 0;
+	padding: 0;
+	background-color: #141e27;
+	background-image: url("../img/bg.png");
+  	background-repeat: no-repeat;
+  	background-position: bottom;
+  	background-size: cover;
+  	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	color: #fff;
 }
 
 .red {
-  color: red !important;
+	color: red !important;
 }
 
 .header {
-  border-radius: 10px;
-  background-color: rgba(252, 252, 252, 0.02);
-  max-width: 985px;
+	border-radius: 10px;
+	background-color:  rgba(252, 252, 252, 0.02);
+	max-width: 985px;
   width: 90%;
-  height: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 70px;
-  padding-left: 36px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 70px;
+	padding-left: 36px;
   padding-right: 20px;
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
   justify-content: space-between;
-  border: 1px solid #253741;
-  box-sizing: border-box;
-}
-@media only screen and (max-width: 700px) {
-  .header {
+	border: 1px solid #253741;
+	box-sizing: border-box;
+  
+   @media only screen and (max-width : 700px) {
     flex-direction: column;
-    height: 140px;
-    padding-bottom: 20px;
+     height: 140px;
+     padding-bottom: 20px;
   }
-}
-@media only screen and (max-width: 420px) {
-  .header {
+  
+  @media only screen and (max-width : 420px) {
     text-align: center;
-    height: 160px;
-    padding-bottom: 20px;
+     height: 160px;
+     padding-bottom: 20px;
   }
-}
-.header h1 {
-  font-weight: 500;
-  font-size: 32px;
-}
-@media only screen and (max-width: 700px) {
-  .header h1 {
-    font-size: 24px;
+
+	h1 {
+		font-weight: 500;
+		font-size: 32px;
+    
+    @media only screen and (max-width : 700px) {
+     font-size: 24px;
+    }
+	}
+  
+  .dropdown-wrap {
+    position: relative;
+    font-weight: 300;
+    font-size: 16px;
+    user-select: none;
+    
+    .dropdown {
+      border-radius: 5px;
+      border: 1px solid #92e8fe;
+      width: 297px;
+      height: 55px;
+      padding: 15px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      
+      @media only screen and (max-width : 700px) {
+       width: 250px;
+      }
+
+      .arrow {
+        display: block;
+        width: 6px;
+        height: 6px;
+        border: 1px solid #92e8fe;
+        border-top: none;
+        border-left:  none;
+        transform: rotate(45deg);
+
+      }
+    }
+    .dropdown-list {
+        position: absolute;
+        top: 65px;
+        border-radius: 5px;
+        border: 1px solid #92e8fe;
+        background-color:  #1e252b;
+        box-sizing: border-box;
+        width: 297px;
+        height: 96px;
+        z-index: 3;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+      
+        @media only screen and (max-width : 700px) {
+         width: 250px;
+        }
+        &.active {
+          display: flex;
+        }
+      
+        .val {
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-bottom: 4px;
+          padding-top: 4px;
+          margin: 0;
+          cursor: pointer;
+          text-align: left;
+          
+          &.active {
+            display: none;
+          }
+          
+          &:hover {
+            background-color: #141e27;
+          }
+        }
+      }
   }
-}
-.header .dropdown-wrap {
-  position: relative;
-  font-weight: 300;
-  font-size: 16px;
-  user-select: none;
-}
-.header .dropdown-wrap .dropdown {
-  border-radius: 5px;
-  border: 1px solid #92e8fe;
-  width: 297px;
-  height: 55px;
-  padding: 15px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-@media only screen and (max-width: 700px) {
-  .header .dropdown-wrap .dropdown {
-    width: 250px;
-  }
-}
-.header .dropdown-wrap .dropdown .arrow {
-  display: block;
-  width: 6px;
-  height: 6px;
-  border: 1px solid #92e8fe;
-  border-top: none;
-  border-left: none;
-  transform: rotate(45deg);
-}
-.header .dropdown-wrap .dropdown-list {
-  position: absolute;
-  top: 65px;
-  border-radius: 5px;
-  border: 1px solid #92e8fe;
-  background-color: #1e252b;
-  box-sizing: border-box;
-  width: 297px;
-  height: 96px;
-  z-index: 3;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-}
-@media only screen and (max-width: 700px) {
-  .header .dropdown-wrap .dropdown-list {
-    width: 250px;
-  }
-}
-.header .dropdown-wrap .dropdown-list.active {
-  display: flex;
-}
-.header .dropdown-wrap .dropdown-list .val {
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 4px;
-  padding-top: 4px;
-  margin: 0;
-  cursor: pointer;
-  text-align: left;
-}
-.header .dropdown-wrap .dropdown-list .val:hover {
-  background-color: #141e27;
 }
 
 .crypto-section {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  box-sizing: border-box;
-  max-width: 1920px;
-  height: 718px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 50px;
-}
-.crypto-section .crypto-wrap {
-  background-color: #141e27;
-  width: 308px;
-  height: 354px;
-  margin: 15px;
-  padding: 20px;
-  padding-left: 25px;
-  padding-right: 25px;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-.crypto-section .crypto-wrap.ethereum-wrap {
-  background-image: url(../img/ethereum-bg.png);
-}
-.crypto-section .crypto-wrap.litecoin-wrap {
-  background-image: url(../img/litecoin-bg.png);
-}
-.crypto-section .crypto-wrap.bitcoin-wrap {
-  background-image: url(../img/bitcoin-bg.png);
-}
-.crypto-section .crypto-wrap .crypto-name {
-  margin: 0;
-  position: relative;
-  z-index: 2;
-  font-size: 22px;
-  text-align: center;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 142px;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap form {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .toggle-button {
-  display: none;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .toggle-button + label:before {
-  content: "";
-  border-radius: 50%;
-  background-image: url(../img/toggle-icon.png);
-  display: block;
-  left: 0px;
-  top: -3px;
-  height: 22px;
-  width: 22px;
-  background-position: center;
-  position: relative;
-  transition: all 0.3s;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .toggle-button + label {
-  background-color: #3eb5f1;
-  width: 41px;
-  height: 15px;
-  border-radius: 1rem;
-  cursor: pointer;
-  display: block;
-  transition: all 0.3s;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .toggle-button:checked + label:before {
-  left: 20px;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .toggle-button:checked + label {
-  background-color: #c4c4c4;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .data-name {
-  width: 50%;
-  opacity: 0.5;
-  margin-bottom: 7px;
-  font-size: 14px;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .data-name.price {
-  font-size: 20px;
-  opacity: 1;
-  margin-bottom: 13px;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .data-name.percent-toggle {
-  font-size: 14px;
-  opacity: 1;
-  margin-bottom: 11px;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .data {
-  width: 50%;
-  margin: 0;
-  text-align: right;
-  color: #70c446;
-  font-size: 16px;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .data.price {
-  color: #fff;
-  font-size: 21px;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ETH, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ETH, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ETH, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ETH, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-LTC, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-LTC, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-LTC, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-LTC, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-BTC, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-BTC, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-BTC, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-BTC {
-  display: block;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ETH.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ETH.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ETH.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ETH.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-LTC.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-LTC.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-LTC.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-LTC.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-BTC.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-BTC.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-BTC.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-BTC.active {
-  display: none;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ETH-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ETH-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ETH-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ETH-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-LTC-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-LTC-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-LTC-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-LTC-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-BTC-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-BTC-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-BTC-usd, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-BTC-usd {
-  display: none;
-}
-.crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-ETH-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-ETH-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-ETH-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-ETH-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-LTC-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-LTC-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-LTC-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-LTC-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-hour-BTC-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-day-BTC-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-week-BTC-usd.active, .crypto-section .crypto-wrap .crypto-data-wrap .data.data-month-BTC-usd.active {
-  display: block;
+  	width: 100%;
+  	display: flex;
+	flex-wrap: wrap;
+  	justify-content: center;
+	
+	box-sizing: border-box;
+	max-width: 1920px;
+	height: 718px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+
+
+	
+
+	
+
+	
+	
+  	.crypto-wrap {
+  		background-color: #141e27;
+  		
+  		width: 308px;
+  		height: 354px;
+  		margin: 15px;
+  		padding: 20px;
+  		padding-left: 25px;
+  		padding-right: 25px;
+  		box-sizing: border-box;
+  		border-radius: 5px;
+
+		&.ethereum-wrap {
+	  		background-image: url(../img/ethereum-bg.png);
+	  	}
+
+	  	&.litecoin-wrap {
+	  		background-image: url(../img/litecoin-bg.png);
+	 	}
+
+	 	&.bitcoin-wrap {
+	  		background-image: url(../img/bitcoin-bg.png);
+	  	}
+
+  		.crypto-name {
+  			margin: 0;
+  			position: relative;
+  			z-index: 2;
+			font-size: 22px;
+			text-align: center;
+  		}
+
+  		.crypto-data-wrap {
+			display: flex;
+			flex-wrap: wrap;
+			padding-top: 142px;
+
+			form {
+				display: flex;
+				align-items: flex-start;
+				justify-content: flex-end;
+			}
+
+
+			.toggle-button {
+				display: none;
+			}
+
+			.toggle-button + label:before {
+				content: "";
+				border-radius: 50%;
+				background-image: url(../img/toggle-icon.png);
+				display: block;
+				left: 0px;
+				top: -3px;
+				height: 22px;
+				width: 22px;
+				background-position: center;
+				position: relative;
+				transition: all 0.3s;
+			}
+
+			.toggle-button + label {
+				background-color:  #3eb5f1;
+				width: 41px;
+				height: 15px;
+				border-radius: 1rem;
+				cursor: pointer;
+				display: block;
+				transition: all 0.3s;
+			}
+
+			.toggle-button:checked + label:before {
+				left: 20px;
+			}
+
+			.toggle-button:checked + label {
+				background-color:  #c4c4c4;
+			}
+	  			
+  			.data-name {
+  				width: 50%;
+  				opacity: 0.5;
+  				margin-bottom: 7px;
+  				font-size: 14px;
+
+  				&.price {
+  					font-size: 20px;
+  					opacity: 1;
+  					margin-bottom: 13px;
+  				}
+
+  				&.percent-toggle {
+  					font-size: 14px;
+  					opacity: 1;
+  					margin-bottom: 11px;
+  				}
+  			}
+
+  			.data {
+  				width: 50%;
+  				margin: 0;
+  				text-align: right;
+  				color: #70c446;
+  				font-size: 16px;
+
+  				&.price {
+  					color: #fff;
+  					font-size: 21px;
+  				}
+
+  				&.data-hour-ETH,
+  				&.data-day-ETH,
+  				&.data-week-ETH,
+  				&.data-month-ETH,
+  				&.data-hour-LTC,
+  				&.data-day-LTC,
+  				&.data-week-LTC,
+  				&.data-month-LTC,
+  				&.data-hour-BTC,
+  				&.data-day-BTC,
+  				&.data-week-BTC,
+  				&.data-month-BTC {
+					display: block;
+					&.active {
+						display: none;
+					}
+  				}
+
+
+  				&.data-hour-ETH-usd,
+  				&.data-day-ETH-usd,
+  				&.data-week-ETH-usd,
+  				&.data-month-ETH-usd,
+  				&.data-hour-LTC-usd,
+  				&.data-day-LTC-usd,
+  				&.data-week-LTC-usd,
+  				&.data-month-LTC-usd,
+  				&.data-hour-BTC-usd,
+  				&.data-day-BTC-usd,
+  				&.data-week-BTC-usd,
+  				&.data-month-BTC-usd {
+					display: none;
+					&.active {
+						display: block;
+					}
+  				}
+  			}
+  		}
+  	}
 }
