@@ -10,7 +10,7 @@
 
 	<title>Taste</title>
 	
-	<link href="https://fonts.googleapis.com/css?family=Roboto:500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700" rel="stylesheet">
 
 	<!-- <link rel="stylesheet" type="text/css" href="libs/normalize.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -21,20 +21,23 @@
 
 	<div class="header">
 		<h1>Select currency to exhange:</h1>
-		<div class="dropdown">
-		    <span class="selLabel">USD</span>
-		    <input type="hidden" name="cd-dropdown">
-		    <ul class="dropdown-list">
-		      <li data-value="1">
+		<div class="dropdown-wrap">
+      <div class="dropdown">
+		    <span class="current-value">USD</span>
+        <div class="arrow"></div>
+		  </div>
+		   
+      <div class="dropdown-list">
+		      <div data-value="1" class="val eur-val">
 		        <span>EUR</span>
-		      </li>
-		      <li data-value="2">
+		      </div>
+		      <div data-value="2" class='val rub-val'>
 		        <span>RUB</span>
-		      </li>
-		      <li data-value="3">
+		      </div>
+		      <div data-value="3" class='val gbp-val'>
 		        <span>GBP</span>
-		      </li>
-		    </ul>
+		      </div>
+		    </div>
 		  </div>
 	</div>
 
