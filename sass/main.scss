@@ -113,8 +113,8 @@ body {
           padding-bottom: 4px;
           padding-top: 4px;
           margin: 0;
-	  text-align: left;
           cursor: pointer;
+          text-align: left;
           
           &:hover {
             background-color: #141e27;
@@ -255,18 +255,18 @@ body {
   					font-size: 21px;
   				}
 
-  				&.data-hour-ethereum,
-  				&.data-day-ethereum,
-  				&.data-week-ethereum,
-  				&.data-month-ethereum,
-  				&.data-hour-ltc,
-  				&.data-day-ltc,
-  				&.data-week-ltc,
-  				&.data-month-ltc,
-  				&.data-hour-btc,
-  				&.data-day-btc,
-  				&.data-week-btc,
-  				&.data-month-btc {
+  				&.data-hour-ETH,
+  				&.data-day-ETH,
+  				&.data-week-ETH,
+  				&.data-month-ETH,
+  				&.data-hour-LTC,
+  				&.data-day-LTC,
+  				&.data-week-LTC,
+  				&.data-month-LTC,
+  				&.data-hour-BTC,
+  				&.data-day-BTC,
+  				&.data-week-BTC,
+  				&.data-month-BTC {
 					display: block;
 					&.active {
 						display: none;
@@ -274,18 +274,18 @@ body {
   				}
 
 
-  				&.data-hour-ethereum-usd,
-  				&.data-day-ethereum-usd,
-  				&.data-week-ethereum-usd,
-  				&.data-month-ethereum-usd,
-  				&.data-hour-ltc-usd,
-  				&.data-day-ltc-usd,
-  				&.data-week-ltc-usd,
-  				&.data-month-ltc-usd,
-  				&.data-hour-btc-usd,
-  				&.data-day-btc-usd,
-  				&.data-week-btc-usd,
-  				&.data-month-btc-usd {
+  				&.data-hour-ETH-usd,
+  				&.data-day-ETH-usd,
+  				&.data-week-ETH-usd,
+  				&.data-month-ETH-usd,
+  				&.data-hour-LTC-usd,
+  				&.data-day-LTC-usd,
+  				&.data-week-LTC-usd,
+  				&.data-month-LTC-usd,
+  				&.data-hour-BTC-usd,
+  				&.data-day-BTC-usd,
+  				&.data-week-BTC-usd,
+  				&.data-month-BTC-usd {
 					display: none;
 					&.active {
 						display: block;
