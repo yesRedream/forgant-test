@@ -1,21 +1,44 @@
 function ajaxCall(coin, money) {
   var url = "https://apiv2.bitcoinaverage.com/indices/global/ticker/"+coin+money;
+  if (money === "USD") {
+    var symbol = "$"
+  } 
+  else if (money === "RUB") {
+    var symbol = "р.";
+  } 
+  else if (money === "EUR") {
+    var symbol = "€";
+  } 
+  else if (money === "GBP") {
+    var symbol = "£";
+  } 
   $.ajax({  
     dataType: 'json',
     url: url,
     success: function(jsondata){
-      $('.price-'+coin).html(jsondata.last + "$");
+      $('.price-'+coin).html(jsondata.last + symbol);
       $('.data-hour-'+coin).html(jsondata.changes.percent.hour + "%");
       $('.data-day-'+coin).html(jsondata.changes.percent.day + "%");
       $('.data-week-'+coin).html(jsondata.changes.percent.week + "%");
       $('.data-month-'+coin).html(jsondata.changes.percent.month + "%");
 
-      $('.data-hour-'+coin+'-usd').html(jsondata.changes.price.hour + "$");
-      $('.data-day-'+coin+'-usd').html(jsondata.changes.price.day + "$");
-      $('.data-week-'+coin+'-usd').html(jsondata.changes.price.week + "$");
-      $('.data-month-'+coin+'-usd').html(jsondata.changes.price.month + "$");
+      $('.data-hour-'+coin+'-usd').html(jsondata.changes.price.hour + symbol);
+      $('.data-day-'+coin+'-usd').html(jsondata.changes.price.day + symbol);
+      $('.data-week-'+coin+'-usd').html(jsondata.changes.price.week + symbol);
+      $('.data-month-'+coin+'-usd').html(jsondata.changes.price.month + symbol);
+      
+      if (parseInt(jsondata.changes.percent.hour) < 0) $('.data-hour-'+coin).addClass('red');
+      if (parseInt(jsondata.changes.percent.day) < 0) $('.data-day-'+coin).addClass('red');
+      if (parseInt(jsondata.changes.percent.week) < 0) $('.data-week-'+coin).addClass('red');
+      if (parseInt(jsondata.changes.percent.month) < 0) $('.data-month-'+coin).addClass('red');
+      
+      if (parseInt(jsondata.changes.price.hour) < 0) $('.data-hour-'+coin+'-usd').addClass('red');
+      if (parseInt(jsondata.changes.price.day) < 0)  $('.data-day-'+coin+'-usd').addClass('red');
+      if (parseInt(jsondata.changes.price.week) < 0)  $('.data-week-'+coin+'-usd').addClass('red');
+      if (parseInt(jsondata.changes.price.month) < 0) $('.data-month-'+coin+'-usd').addClass('red');
     }
   });
+  
  }
 
 $( document ).ready(function(){
@@ -40,6 +63,12 @@ $('.gbp-val').click(function(){
   ajaxCall('ETH', 'GBP');
   ajaxCall('LTC', 'GBP');
   ajaxCall('BTC', 'GBP');
+});
+
+$('.usd-val').click(function(){
+  ajaxCall('ETH', 'USD');
+  ajaxCall('LTC', 'USD');
+  ajaxCall('BTC', 'USD');
 });
 
 
@@ -82,3 +111,10 @@ $(".dropdown").click(function(){
     $(".dropdown-list").toggleClass("active");
 });
 
+$(".dropdown-list .val").click(function(e) {
+  e.preventDefault();
+  $(".dropdown-list .val").removeClass('active');
+  $(this).addClass('active');
+  $('.current-value').html($(this).html());
+  $(".dropdown-list").removeClass('active');
+})
