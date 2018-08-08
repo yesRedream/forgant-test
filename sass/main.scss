@@ -18,21 +18,109 @@ body {
 .header {
 	border-radius: 10px;
 	background-color:  rgba(252, 252, 252, 0.02);
-	width: 985px;
-	height: 98px;
+	max-width: 985px;
+  width: 90%;
+	height: 100px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 70px;
 	padding-left: 36px;
+  padding-right: 20px;
 	display: flex;
 	align-items: center;
+  justify-content: space-between;
 	border: 1px solid #253741;
 	box-sizing: border-box;
+  
+   @media only screen and (max-width : 700px) {
+    flex-direction: column;
+     height: 140px;
+     padding-bottom: 20px;
+  }
+  
+  @media only screen and (max-width : 420px) {
+    text-align: center;
+     height: 160px;
+     padding-bottom: 20px;
+  }
 
 	h1 {
 		font-weight: 500;
 		font-size: 32px;
+    
+    @media only screen and (max-width : 700px) {
+     font-size: 24px;
+    }
 	}
+  
+  .dropdown-wrap {
+    position: relative;
+    font-weight: 300;
+    font-size: 16px;
+    user-select: none;
+    
+    .dropdown {
+      border-radius: 5px;
+      border: 1px solid #92e8fe;
+      width: 297px;
+      height: 55px;
+      padding: 15px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      
+      @media only screen and (max-width : 700px) {
+       width: 250px;
+      }
+
+      .arrow {
+        display: block;
+        width: 6px;
+        height: 6px;
+        border: 1px solid #92e8fe;
+        border-top: none;
+        border-left:  none;
+        transform: rotate(45deg);
+
+      }
+    }
+    .dropdown-list {
+        position: absolute;
+        top: 65px;
+        border-radius: 5px;
+        border: 1px solid #92e8fe;
+        background-color:  #1e252b;
+        box-sizing: border-box;
+        width: 297px;
+        height: 96px;
+        z-index: 3;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+      
+        @media only screen and (max-width : 700px) {
+         width: 250px;
+        }
+        &.active {
+          display: flex;
+        }
+      
+        .val {
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-bottom: 4px;
+          padding-top: 4px;
+          margin: 0;
+          cursor: pointer;
+          
+          &:hover {
+            background-color: #141e27;
+          }
+        }
+      }
+  }
 }
 
 .crypto-section {
