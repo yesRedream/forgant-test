@@ -115,6 +115,7 @@ body {
   padding-bottom: 4px;
   padding-top: 4px;
   margin: 0;
+  text-align: left;
   cursor: pointer;
 }
 .header .dropdown-wrap .dropdown-list .val:hover {
