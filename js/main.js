@@ -7,7 +7,7 @@ $.ajax({
     $('.data-day-ethereum').html(jsondata.changes.percent.day + "%");
     $('.data-week-ethereum').html(jsondata.changes.percent.week + "%");
     $('.data-month-ethereum').html(jsondata.changes.percent.month + "%");
-
+console.log(jsondata.changes.percent.month.indexOf('-')); 
     $('.data-hour-ethereum-usd').html(jsondata.changes.price.hour + "$");
     $('.data-day-ethereum-usd').html(jsondata.changes.price.day + "$");
     $('.data-week-ethereum-usd').html(jsondata.changes.price.week + "$");
@@ -81,4 +81,8 @@ $("#toggle-bitcoin").click(function(){
     $(".data-week-btc-usd").toggleClass("active");
     $(".data-month-btc").toggleClass("active");
     $(".data-month-btc-usd").toggleClass("active");
+});
+
+$(".dropdown").click(function(){
+    $(".dropdown-list").toggleClass("active");
 });
