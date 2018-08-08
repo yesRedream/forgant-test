@@ -116,6 +116,10 @@ body {
           cursor: pointer;
           text-align: left;
           
+          &.active {
+            display: none;
+          }
+          
           &:hover {
             background-color: #141e27;
           }
