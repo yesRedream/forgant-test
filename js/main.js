@@ -1,88 +1,84 @@
-$.ajax({
-  dataType: 'json',
-  url: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/ETHUSD',
-  success: function(jsondata){
-    $('.price-ethereum').html(jsondata.last + "$");
-    $('.data-hour-ethereum').html(jsondata.changes.percent.hour + "%");
-    $('.data-day-ethereum').html(jsondata.changes.percent.day + "%");
-    $('.data-week-ethereum').html(jsondata.changes.percent.week + "%");
-    $('.data-month-ethereum').html(jsondata.changes.percent.month + "%");
+function ajaxCall(coin, money) {
+  var url = "https://apiv2.bitcoinaverage.com/indices/global/ticker/"+coin+money;
+  $.ajax({  
+    dataType: 'json',
+    url: url,
+    success: function(jsondata){
+      $('.price-'+coin).html(jsondata.last + "$");
+      $('.data-hour-'+coin).html(jsondata.changes.percent.hour + "%");
+      $('.data-day-'+coin).html(jsondata.changes.percent.day + "%");
+      $('.data-week-'+coin).html(jsondata.changes.percent.week + "%");
+      $('.data-month-'+coin).html(jsondata.changes.percent.month + "%");
 
-    $('.data-hour-ethereum-usd').html(jsondata.changes.price.hour + "$");
-    $('.data-day-ethereum-usd').html(jsondata.changes.price.day + "$");
-    $('.data-week-ethereum-usd').html(jsondata.changes.price.week + "$");
-    $('.data-month-ethereum-usd').html(jsondata.changes.price.month + "$");
-  }
+      $('.data-hour-'+coin+'-usd').html(jsondata.changes.price.hour + "$");
+      $('.data-day-'+coin+'-usd').html(jsondata.changes.price.day + "$");
+      $('.data-week-'+coin+'-usd').html(jsondata.changes.price.week + "$");
+      $('.data-month-'+coin+'-usd').html(jsondata.changes.price.month + "$");
+    }
+  });
+ }
+
+$( document ).ready(function(){
+  ajaxCall('ETH', 'USD');
+  ajaxCall('LTC', 'USD');
+  ajaxCall('BTC', 'USD');
 });
 
-$.ajax({
-  dataType: 'json',
-  url: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/LTCUSD',
-  success: function(jsondata){
-    $('.price-ltc').html(jsondata.last + "$");
-    $('.data-hour-ltc').html(jsondata.changes.percent.hour + "%");
-    $('.data-day-ltc').html(jsondata.changes.percent.day + "%");
-    $('.data-week-ltc').html(jsondata.changes.percent.week + "%");
-    $('.data-month-ltc').html(jsondata.changes.percent.month + "%");
-
-    $('.data-hour-ltc-usd').html(jsondata.changes.price.hour + "$");
-    $('.data-day-ltc-usd').html(jsondata.changes.price.day + "$");
-    $('.data-week-ltc-usd').html(jsondata.changes.price.week + "$");
-    $('.data-month-ltc-usd').html(jsondata.changes.price.month + "$");
-
-  }
+$('.eur-val').click(function(){
+  ajaxCall('ETH', 'EUR');
+  ajaxCall('LTC', 'EUR');
+  ajaxCall('BTC', 'EUR');
 });
 
-$.ajax({
-  dataType: 'json',
-  url: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD',
-  success: function(jsondata){
-    $('.price-btc').html(jsondata.last + "$");
-    $('.data-hour-btc').html(jsondata.changes.percent.hour + "%");
-    $('.data-day-btc').html(jsondata.changes.percent.day + "%");
-    $('.data-week-btc').html(jsondata.changes.percent.week + "%");
-    $('.data-month-btc').html(jsondata.changes.percent.month + "%");
-
-    $('.data-hour-btc-usd').html(jsondata.changes.price.hour + "$");
-    $('.data-day-btc-usd').html(jsondata.changes.price.day + "$");
-    $('.data-week-btc-usd').html(jsondata.changes.price.week + "$");
-    $('.data-month-btc-usd').html(jsondata.changes.price.month + "$");
-  }
+$('.rub-val').click(function(){
+  ajaxCall('ETH', 'RUB');
+  ajaxCall('LTC', 'RUB');
+  ajaxCall('BTC', 'RUB');
 });
+
+$('.gbp-val').click(function(){
+  ajaxCall('ETH', 'GBP');
+  ajaxCall('LTC', 'GBP');
+  ajaxCall('BTC', 'GBP');
+});
+
+
+
 
 $("#toggle-ethereum").click(function(){
-    $(".data-hour-ethereum").toggleClass("active");
-    $(".data-hour-ethereum-usd").toggleClass("active");
-    $(".data-day-ethereum").toggleClass("active");
-    $(".data-day-ethereum-usd").toggleClass("active");
-    $(".data-week-ethereum").toggleClass("active");
-    $(".data-week-ethereum-usd").toggleClass("active");
-    $(".data-month-ethereum").toggleClass("active");
-    $(".data-month-ethereum-usd").toggleClass("active");
+    $(".data-hour-ETH").toggleClass("active");
+    $(".data-hour-ETH-usd").toggleClass("active");
+    $(".data-day-ETH").toggleClass("active");
+    $(".data-day-ETH-usd").toggleClass("active");
+    $(".data-week-ETH").toggleClass("active");
+    $(".data-week-ETH-usd").toggleClass("active");
+    $(".data-month-ETH").toggleClass("active");
+    $(".data-month-ETH-usd").toggleClass("active");
 });
 
 $("#toggle-litecoin").click(function(){
-    $(".data-hour-ltc").toggleClass("active");
-    $(".data-hour-ltc-usd").toggleClass("active");
-    $(".data-day-ltc").toggleClass("active");
-    $(".data-day-ltc-usd").toggleClass("active");
-    $(".data-week-ltc").toggleClass("active");
-    $(".data-week-ltc-usd").toggleClass("active");
-    $(".data-month-ltc").toggleClass("active");
-    $(".data-month-ltc-usd").toggleClass("active");
+    $(".data-hour-LTC").toggleClass("active");
+    $(".data-hour-LTC-usd").toggleClass("active");
+    $(".data-day-LTC").toggleClass("active");
+    $(".data-day-LTC-usd").toggleClass("active");
+    $(".data-week-LTC").toggleClass("active");
+    $(".data-week-LTC-usd").toggleClass("active");
+    $(".data-month-LTC").toggleClass("active");
+    $(".data-month-LTC-usd").toggleClass("active");
 });
 
 $("#toggle-bitcoin").click(function(){
-    $(".data-hour-btc").toggleClass("active");
-    $(".data-hour-btc-usd").toggleClass("active");
-    $(".data-day-btc").toggleClass("active");
-    $(".data-day-btc-usd").toggleClass("active");
-    $(".data-week-btc").toggleClass("active");
-    $(".data-week-btc-usd").toggleClass("active");
-    $(".data-month-btc").toggleClass("active");
-    $(".data-month-btc-usd").toggleClass("active");
+    $(".data-hour-BTC").toggleClass("active");
+    $(".data-hour-BTC-usd").toggleClass("active");
+    $(".data-day-BTC").toggleClass("active");
+    $(".data-day-BTC-usd").toggleClass("active");
+    $(".data-week-BTC").toggleClass("active");
+    $(".data-week-BTC-usd").toggleClass("active");
+    $(".data-month-BTC").toggleClass("active");
+    $(".data-month-BTC-usd").toggleClass("active");
 });
 
 $(".dropdown").click(function(){
     $(".dropdown-list").toggleClass("active");
 });
+
